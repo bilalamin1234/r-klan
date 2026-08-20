@@ -100,10 +100,10 @@ p {
 /* about */
  
 #about {
-  width: 100%;
+  width: 100%; 
   display: flex;
   padding-top: 150px;
-  padding-bottom: 100px;
+  padding-bottom: 100px; 
   padding-right: 20px;
   background-image: url("../image/home/BG-OP.jpg");
   background-size: cover;
