@@ -97,6 +97,7 @@ p {
   width: 100%;
   display: flex;
   padding: 150px 20px 100px 20px; 
+  margin-right: 20px;
   background-image: url("../image/home/BG-OP.jpg");
   background-size: cover;
 }
