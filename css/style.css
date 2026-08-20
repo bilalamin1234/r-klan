@@ -98,13 +98,13 @@ p {
 /* democracy */
 
 /* about */
-
+ 
 #about {
   width: 100%;
   display: flex;
   padding-top: 150px;
   padding-bottom: 100px;
-
+ 
   margin-right: 20px;
   background-image: url("../image/home/BG-OP.jpg");
   background-size: cover;
