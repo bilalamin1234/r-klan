@@ -1,0 +1,484 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Inter Tight", sans-serif;
+}
+.container {
+  width: 100%;
+  max-width: 1280px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: 50px;
+  font-weight: 400;
+}
+p {
+  font-size: 25px;
+}
+.btn a {
+  text-decoration: none;
+  font-size: 18px;
+  padding: 15px 25px;
+  border-radius: 5px;
+  background: linear-gradient(
+    90deg,
+    rgba(140, 0, 0, 1) 30%,
+    rgba(166, 0, 0, 1) 45%,
+    rgba(209, 1, 1, 1) 58%
+  );
+  color: white;
+  display: inline-block;
+}
+.btn a::after {
+  content: "\f178";
+  font-weight: 900;
+  font-family: "Font Awesome 6 Free";
+  margin-left: 10px;
+}
+.btn a:hover {
+  background: linear-gradient(
+    90deg,
+    rgba(140, 0, 0, 1) 30%,
+    rgba(166, 0, 0, 1) 45%
+  );
+}
+
+/* democracy */
+
+#democracy {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 100px 15px;
+  background-color: #142749;
+}
+#democracy .container {
+  row-gap: 20px;
+}
+
+#democracy .contents {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+  width: 100%;
+  max-width: 800px;
+  text-align: center;
+  row-gap: 10px;
+}
+#democracy .image {
+  border: 15px solid rgb(255, 255, 255, 0.3);
+  border-radius: 30px;
+  margin-bottom: -170px;
+}
+#democracy img {
+  width: 100%;
+  height: 550px;
+  object-fit: cover;
+  object-position: center;
+  line-height: 0px;
+  border-radius: 15px;
+}
+
+/* democracy */
+
+/* about */
+
+#about {
+  width: 100%;
+  display: flex;
+   padding-top: 150px;
+   padding-bottom: 100px;  
+  background-image: url("../image/home/BG-OP.jpg");
+  background-size: cover;
+}
+#about .row {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+#about .image {
+  background-image: url("../image/home/flight.jpg");
+  background-size: cover;
+  width: 100%;
+  border-radius: 0px 20px 20px 0px;
+  height: auto;
+  min-height: 80vh;
+}
+
+#about .text {
+  display: flex;
+  flex-direction: column;
+  row-gap: 25px;
+  width: 100%;
+  padding: 2% 10%;
+}
+#about .para {
+  display: flex;
+  flex-direction: column;
+  row-gap: 35px;
+}
+#about .para p {
+  font-size: 22px;
+}
+
+/* about */
+
+/* book */
+
+#book {
+  width: 100%;
+  background-image: url("../image/home/r-klan-background.jpg");
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+#book .container {
+  flex-direction: row;
+}
+#book .image {
+  width: 50%;
+}
+#book img {
+  width: 100%;
+  border: 8px solid #a0a0a0;
+  margin-bottom: -70px;
+}
+#book .content {
+  padding: 15px 100px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 40px;
+  align-items: center;
+  justify-content: center;
+}
+#book .content .text {
+  display: flex;
+  flex-direction: column;
+  row-gap: 30px;
+}
+#book .content .text h3 {
+  color: #db0101;
+  font-size: 30px;
+  font-weight: 700;
+}
+#book .content .btn {
+  margin-right: 25px;
+}
+
+/* book */
+
+/* shop */
+
+#shop {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+
+  padding: 120px 20px;
+}
+#shop .container {
+  row-gap: 40px;
+}
+#shop .contents {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  column-gap: 35px;
+}
+#shop .contents .tshirt1 {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  row-gap: 25px;
+}
+#shop .contents .tshirt2 {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  row-gap: 25px;
+}
+#shop .contents .tshirt1 .image {
+  width: 100%;
+}
+#shop .contents .tshirt1 .image img {
+  width: 100%;
+  line-height: 0px;
+  border-radius: 30px;
+  height: 500px;
+  object-fit: cover;
+  object-position: center;
+}
+#shop .contents .tshirt2 .image {
+  width: 100%;
+}
+#shop .contents .tshirt2 .image img {
+  width: 100%;
+  line-height: 0px;
+  border-radius: 30px;
+  height: 500px;
+  object-fit: cover;
+  object-position: center;
+}
+#shop .contents .text {
+  display: flex;
+  justify-content: space-between;
+}
+#shop .contents .text a {
+  padding: 20px 25px;
+}
+
+/* shop */
+
+/* review */
+
+#review {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 60px 20px 100px 20px;
+  background-image: url("../image/home/t-shirt-background.jpg");
+  background-size: cover;
+}
+#review .container {
+  row-gap: 100px;
+}
+#review .contents {
+  display: flex;
+  column-gap: 20px;
+}
+#review .contents .image {
+  display: flex;
+  justify-content: center;
+}
+#review .text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 15px;
+  padding: 20px;
+}
+.text .icon {
+  display: flex;
+  color: #f8ba39;
+}
+.text .icon p {
+  font-size: 22px;
+}
+.contents .box {
+  background-color: white;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0px 3px 20px 5px rgba(94, 94, 94, 0.5);
+}
+
+#review .contents .image img {
+  margin-top: -60px;
+  height: 120px;
+  filter: drop-shadow(0px 15px 15px #6e6363);
+}
+.text .position {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+.text h3 {
+  color: black;
+  font-size: 25px;
+}
+.text p {
+  font-size: 20px;
+}
+.contents .responsive {
+  display: flex;
+  column-gap: 20px;
+}
+
+/* review */
+
+/* note */
+
+#note {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  row-gap: 25px;
+  justify-content: center;
+  align-items: center;
+  padding: 50px 20px;
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.5)),
+    url("../image/home/authors-note.jpg");
+  background-size: cover;
+  background-position: top center;
+}
+#note .container {
+  row-gap: 25px;
+  align-items: flex-start;
+}
+#note h2 {
+  color: #efe9e9;
+  font-size: 40px;
+  text-align: center;
+}
+#note p {
+  color: #efe9e9;
+  font-size: 20px;
+}
+/* note */
+
+/* donate */
+
+#donate {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 70px 20px;
+}
+#donate .container {
+  flex-direction: row;
+  justify-content: space-between;
+}
+#donate .content {
+  display: flex;
+  column-gap: 30px;
+}
+#donate .content img {
+  height: 130px;
+}
+#donate .text h2 {
+  font-size: 50px;
+  font-weight: 500;
+}
+#donate .btn a {
+  font-size: 25px;
+  padding: 20px 30px;
+}
+/* donate */
+
+/* footer */
+
+footer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 60px 20px;
+  background-color: #142749;
+}
+footer .container {
+  row-gap: 70px;
+}
+footer .contents {
+  display: flex;
+  column-gap: 200px;
+  width: 100%;
+}
+footer .contents .content1 {
+  width: 35%;
+}
+footer .contents .content2 {
+  width: 30%;
+}
+footer .contents .content3 {
+  width: 35%;
+  width: 35%;
+  display: flex;
+  flex-direction: column;
+  /* row-gap: 20px; */
+  justify-content: space-between;
+}
+footer .content1 .image {
+  display: flex;
+  flex-direction: column;
+  row-gap: 30px;
+}
+.content1 .image .logo {
+  height: 120px;
+}
+.content1 .image .icon {
+  height: 50px;
+}
+footer .content1 .icon {
+  display: flex;
+  column-gap: 10px;
+  justify-content: center;
+}
+.content2 ul {
+  color: white;
+}
+.content2 ul li {
+  list-style: none;
+}
+.content2 ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 20px;
+}
+.content2 ul {
+  display: flex;
+  flex-direction: column;
+  row-gap: 12px;
+}
+.content3 .address {
+  display: flex;
+  flex-direction: column;
+  row-gap: 5px;
+}
+.content3 .address p {
+  font-size: 20px;
+  color: white;
+}
+.content3 h3 {
+  font-size: 25px;
+  color: white;
+}
+.content3 p {
+  font-size: 20px;
+  color: white;
+}
+footer .copyright {
+  border-top: solid #4c5b75;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+footer .copyright p {
+  margin-top: 20px;
+  color: white;
+  font-size: 20px;
+}
+.content3 .address p::before {
+  content: "\f3c5";
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  margin-right: 10px;
+  color: #727d92;
+}
+.content3 h3::before {
+  content: "\f2a0";
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  margin-right: 10px;
+  font-size: 20px;
+  color: #727d92;
+}
+.content3 p::before {
+  content: "\f0e0";
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  margin-right: 10px;
+  color: #727d92;
+}
+/* footer */
