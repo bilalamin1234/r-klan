@@ -698,7 +698,7 @@ footer .copyright p {
   position: relative;
   z-index: 1;
 }
- img {
+#choose img {
   width: 100%;
   margin-bottom: -70px;
   padding-top: 30px;
