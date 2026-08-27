@@ -690,7 +690,7 @@ footer .copyright p {
   height: 100%;
   width: 100%;
   top: -85px;
-  right: -500px;
+  right: -580px;
   background-repeat: no-repeat;
 }
 #choose .contents {
@@ -701,11 +701,11 @@ footer .copyright p {
 #choose img {
   width: 100%;
   margin-bottom: -70px;
-  padding-top: 30px;
-  
+  border: 8px solid #a0a0a0;
+  margin-top: 30px;
 }
 #choose figure
-{border: 8px solid #a0a0a0;
+{
 }
 #choose .text {
   padding-top: 50px;
