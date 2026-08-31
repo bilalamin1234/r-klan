@@ -391,7 +391,46 @@ footer .contents .content3 {
 
 /* footer */
 
+/* about */
+@media (max-width:1440px) {
+  #about .flight{
+    height: auto;
+    min-height: 500px;
+  }
 
+}
+@media (max-width:1024px) {
+  .text2 p{
+  font-size: 18px;
+}
+ #about .text2{
+  padding: 30px;
+ }
+  #about .container{
+    padding: 0px;
+  }
+
+}
+@media (max-width:768px) {
+  #about .container{
+    flex-direction: column;
+  }
+}
+@media (max-width:640px) {
+  #about .flight{
+    height: auto;
+    min-height: 400px;
+  }
+
+}
+@media (max-width:480px) {
+  #about .flight{
+    height: auto;
+    min-height: 450px;
+  }
+
+}
+/* about */
 /* choose */
 
 @media (max-width:1024px) {
@@ -401,5 +440,24 @@ footer .contents .content3 {
     #choose h2{
       font-size: 40px;
     }
+}
+@media (max-width:991px) {
+    #choose p{
+      font-size: 15px;
+    }
+    #choose h2{
+      font-size: 30px;
+    }
+    #choose::before{
+    right: -450px;
+  }
+}
+@media (max-width:768px) {
+  .contents{
+    flex-direction: column;
+  }
+  #choose::before{
+    right: -200px;
+  }
 }
 /* choose */
