@@ -573,3 +573,43 @@
 }
 
 /* testimonials */
+
+/* contact */
+
+@media (max-width:991px) {
+  #contact .text h2{
+  font-size: 30px;
+}
+#contact .container {
+    column-gap: 20px;
+}
+}
+@media (max-width:768px) {
+  #contact .container {
+    flex-direction: column;
+    row-gap: 30px;
+}
+#contact{
+  padding: 100px 15px 60px;
+}
+#contact .flight{
+  min-height: 500px;
+}
+}
+@media (max-width:640px) {
+#contact{
+  padding: 100px 15px 30px;
+}
+#contact .flight{
+  min-height: 450px;
+}
+}
+@media (max-width:480px) {
+#contact{
+  padding: 60px 15px 30px;
+}
+#contact .flight{
+  min-height: 400px;
+}
+}
+/* contact */
