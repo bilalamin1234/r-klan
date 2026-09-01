@@ -308,6 +308,14 @@
   #review .position img {
     height: 35px;
   }
+  #review .contents {
+     flex-wrap: nowrap; 
+    column-gap: 15px;
+    row-gap: 25px;
+  }
+  #review .contents .box {
+    flex: 0 calc(50% - 7.5px);
+  }
 }
 
 @media (max-width: 640px) {
@@ -316,8 +324,8 @@
     row-gap: 40px;
   }
   #review .contents .box {
-   flex: 0 0 calc(50% - 7.5px); 
-  } 
+    flex: 0 calc(50% - 7.5px);
+  }
 
   #review .contents {
     row-gap: 30px;
@@ -332,6 +340,7 @@
   #review h2 {
     font-size: 30px;
   }
+  
 }
 
 /* reviews */
