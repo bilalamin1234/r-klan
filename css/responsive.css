@@ -282,7 +282,7 @@
   }
 
   #review .contents {
-    flex-wrap: wrap;
+     flex-wrap: wrap; 
     column-gap: 15px;
     row-gap: 25px;
   }
@@ -311,14 +311,13 @@
 }
 
 @media (max-width: 640px) {
-  .contents .responsive {
+  .contents {
     flex-direction: column;
     row-gap: 40px;
   }
-
   #review .contents .box {
-    flex: calc(50% - 7.5px);
-  }
+   flex: 0 0 calc(50% - 7.5px); 
+  } 
 
   #review .contents {
     row-gap: 30px;
