@@ -147,43 +147,94 @@ p {
 /* democracy */
 
 #democracy {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  padding: 100px 15px;
-  background-color: #142749;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 100px 15px;
+    background-color: #142749;
+    overflow: visible;
 }
 
 #democracy .container {
-  row-gap: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 20px;
+    overflow: visible;
+}
+#democracy .contents {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #fff !important;
+    width: 100%;
+    max-width: 800px;
+    text-align: center;
+    row-gap: 10px;
 }
 
-#democracy .contents {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  color: white;
-  width: 100%;
-  max-width: 800px;
-  text-align: center;
-  row-gap: 10px;
+#democracy .contents h1,
+#democracy .contents p {
+    color: #fff !important;
+}
+
+#democracy .images {
+    width: 100%;
+    position: relative;
+    z-index: 10;
 }
 
 #democracy .image {
-  border: 15px solid rgb(255, 255, 255, 0.3);
-  border-radius: 30px;
-  margin-bottom: -170px;
+    width: 100%;
+    height: 550px;
+    border: 15px solid rgba(255, 255, 255, 0.3);
+    border-radius: 30px;
+    margin-bottom: -170px;
+    position: relative;
+    overflow: hidden;
+    z-index: 10;
+}
+
+#democracy .image figure {
+    margin: 0;
+    width: 100%;
+    height: 100%;
 }
 
 #democracy img {
-  width: 100%;
-  height: 550px;
-  object-fit: cover;
-  object-position: center;
-  line-height: 0px;
-  border-radius: 15px;
-  z-index: 3;
-  position: relative;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    border-radius: 15px;
+}
+
+#democracy .image:not(:first-child) {
+    display: none;
+}
+
+.slider-dots {
+    position: absolute;
+    bottom: -190px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 8px;
+    z-index: 20;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #aaa;
+    opacity: 1;
+    cursor: pointer;
+}
+
+.dot.active {
+    background-color: #a90000;
 }
 
 /* democracy */
