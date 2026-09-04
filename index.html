@@ -8,32 +8,8 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/responsive.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <script src="js/script.js" defer></script>
 </head>
-<script>
-
-function showSlide(index) {
-
-    const slides = document.querySelectorAll("#democracy .image");
-    const dots = document.querySelectorAll(".slider-dots .dot");
-
-    // Hide all images
-    slides.forEach(function(slide) {
-        slide.style.display = "none";
-    });
-
-    // Remove active from all dots
-    dots.forEach(function(dot) {
-        dot.classList.remove("active");
-    });
-
-    // Show selected image
-    slides[index].style.display = "block";
-
-    // Make selected dot active
-    dots[index].classList.add("active");
-}
-
-</script>
 <body>
 
     <!-- Nav-Bar -->
@@ -66,58 +42,44 @@ function showSlide(index) {
     <!-- Nav-Bar -->
 
     <!-- democracy  -->
+     <section id="democracy">
+    <div class="container">
 
-    <section id="democracy">
-        <div class="container">
+        <div class="contents">
+            <h1><b>Your Family Has</b> <i>No Rights</i></h1>
+            <p>
+                How nine racist words destroyed a family's peace and sparked a relentless fight against corruption
+                and government retaliation at Ramona Airport.
+            </p>
+        </div>
 
-            <div class="contents">
-                <h1><b>Your Family Has</b> <i>No Rights</i></h1>
-
-                <p>
-                    How nine racist words destroyed a family’s peace and sparked a relentless fight against corruption
-                    and government retaliation at Ramona Airport.
-                </p>
+        <div class="slider">
+            <div class="images" id="sliderWrapper">
+                <div class="slider-track" id="sliderTrack">
+                    <div class="image">
+                        <figure><img src="image/home/Democracy.jpg" alt="Slide 1" draggable="false"></figure>
+                    </div>
+                    <div class="image">
+                        <figure><img src="image/home/imageslider1.jpg" alt="Slide 2" draggable="false"></figure>
+                    </div>
+                    <div class="image">
+                        <figure><img src="image/home/imageslider2.jpg" alt="Slide 3" draggable="false"></figure>
+                    </div>
+                    <div class="image">
+                        <figure><img src="image/home/imageslider3.jpg" alt="Slide 4" draggable="false"></figure>
+                    </div>
+                </div>
             </div>
 
-            <div class="images">
-
-    <div class="image">
-        <figure>
-            <img src="image/home/Democracy.jpg" alt="Democracy">
-        </figure>
-    </div>
-
-    <div class="image">
-        <figure>
-            <img src="image/home/imageslider1.jpg" alt="Image 2">
-        </figure>
-    </div>
-
-    <div class="image">
-        <figure>
-            <img src="image/home/imageslider2.jpg" alt="Image 3">
-        </figure>
-    </div>
-
-    <div class="image">
-        <figure>
-            <img src="image/home/imageslider3.jpg" alt="Image 4">
-        </figure>
-    </div>
-
-    <div class="slider-dots">
-        <span class="dot active" onclick="showSlide(0)"></span>
-        <span class="dot" onclick="showSlide(1)"></span>
-        <span class="dot" onclick="showSlide(2)"></span>
-        <span class="dot" onclick="showSlide(3)"></span>
-    </div>
-
-</div>
-
+            <div class="slider-dots" id="sliderDots">
+                <button class="dot active" data-index="0" aria-label="Go to slide 1"></button>
+                <button class="dot" data-index="1" aria-label="Go to slide 2"></button>
+                <button class="dot" data-index="2" aria-label="Go to slide 3"></button>
+                <button class="dot" data-index="3" aria-label="Go to slide 4"></button>
+            </div>
         </div>
-
-        </div>
-    </section>
+    </div>
+</section>
     <!-- democracy  -->
 
     <!-- about -->

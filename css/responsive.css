@@ -12,6 +12,29 @@
   #democracy {
     padding: 60px 15px;
   }
+
+  #democracy .images {
+    height: 500px;
+  }
+  #democracy .contents{
+    max-width: 650px;
+  }
+  #democracy .contents h1{
+    font-size: 40px;
+  }
+  #democracy .contents p{
+    font-size: 20px;
+  }
+}
+@media (max-width:991px) {
+   #democracy .images {
+    height: 460px;
+  }
+}
+@media (max-width:768px) {
+  #democracy .images {
+    height: 400px;
+  }
 }
 
 @media (max-width: 700px) {
@@ -25,6 +48,11 @@
 
   #democracy .image {
     margin-bottom: -100px;
+  }
+}
+@media (max-width:640px) {
+  #democracy .images {
+    height: 300px;
   }
 }
 
@@ -42,9 +70,22 @@
     border: 10px solid rgb(255, 255, 255, 0.3);
     border-radius: 25px;
   }
+  #democracy .images {
+    height: 350px;
+  }
 
   #democracy .img {
     border-radius: 5px;
+  }
+  @media (max-width:480px) {
+  #democracy .images {
+    height: 250px;
+  }
+}
+}
+@media (max-width:480px) {
+  #democracy .images {
+    height: 200px;
   }
 }
 

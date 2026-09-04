@@ -145,62 +145,32 @@ p {
 /* Nav-Bar */
 
 /* democracy */
-
-#democracy {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    padding: 100px 15px;
+#democracy{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 100px 15px;
     background-color: #142749;
-    overflow: visible;
 }
-
-#democracy .container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    row-gap: 20px;
-    overflow: visible;
+#democracy .container{
+  row-gap: 30px;
+  margin-bottom: -200px;
+  z-index: 3;
 }
-#democracy .contents {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    color: #fff !important;
-    width: 100%;
-    max-width: 800px;
-    text-align: center;
-    row-gap: 10px;
-}
-
 #democracy .contents h1,
 #democracy .contents p {
     color: #fff !important;
 }
-
-#democracy .images {
-    width: 100%;
-    position: relative;
-    z-index: 10;
-}
-
 #democracy .image {
     width: 100%;
-    height: 550px;
-    border: 15px solid rgba(255, 255, 255, 0.3);
+    height: auto;
+    /* border: 15px solid rgba(255, 255, 255, 0.3); */
     border-radius: 30px;
     margin-bottom: -170px;
     position: relative;
     overflow: hidden;
     z-index: 10;
 }
-
-#democracy .image figure {
-    margin: 0;
-    width: 100%;
-    height: 100%;
-}
-
 #democracy img {
     width: 100%;
     height: 100%;
@@ -210,32 +180,99 @@ p {
     border-radius: 15px;
 }
 
-#democracy .image:not(:first-child) {
-    display: none;
-}
-
-.slider-dots {
-    position: absolute;
-    bottom: -190px;
-    left: 50%;
-    transform: translateX(-50%);
+#democracy .contents{
     display: flex;
-    gap: 8px;
-    z-index: 20;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    max-width: 800px;
 }
+#democracy .slider {
+      width: 100%;
+      position: relative;
+  }
 
-.dot {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    background-color: #aaa;
-    opacity: 1;
-    cursor: pointer;
-}
+  #democracy .images {
+      width: 100%;
+      height: 550px;
+      position: relative;
+      overflow: hidden;
+      border: 15px solid rgba(255, 255, 255, 0.3);
+      border-radius: 30px;
+      cursor: grab;
+  }
 
-.dot.active {
-    background-color: #a90000;
-}
+  #democracy .images.dragging {
+      cursor: grabbing;
+  }
+
+  /* Track holds all slides in a row; sliding = moving this element */
+  #democracy .slider-track {
+      display: flex;
+      width: 100%;
+      height: 100%;
+      transition: transform 0.5s cubic-bezier(.4,0,.2,1);
+      will-change: transform;
+  }
+
+  #democracy .slider-track.no-transition {
+      transition: none;
+  }
+
+  #democracy .image {
+      flex: 0 0 100%;
+      width: 100%;
+      height: 100%;
+      position: relative;
+      overflow: hidden;
+          border-radius: 15px;
+
+  }
+
+  #democracy .image figure {
+      margin: 0;
+      width: 100%;
+      height: 100%;
+  }
+
+  #democracy .image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+      user-select: none;
+      -webkit-user-drag: none;
+      pointer-events: none;
+  }
+
+  .slider-dots {
+      margin-top: 20px;
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+  }
+
+  .dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background-color: #aaa;
+      cursor: pointer;
+      border: none;
+      padding: 0;
+      transition: background-color 0.25s ease, transform 0.25s ease;
+  }
+
+  .dot:hover { background-color: #c94b4b; }
+
+  .dot.active {
+      background-color: #a90000;
+      transform: scale(1.15);
+  }
+
+ 
 
 /* democracy */
 
