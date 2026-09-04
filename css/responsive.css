@@ -1,3 +1,74 @@
+/* ---- Tighten spacing just before the hamburger breakpoint ---- */
+@media (max-width: 1280px) {
+  #nav-bar ul {
+    column-gap: 20px;
+  }
+  #nav-bar .said {
+    column-gap: 15px;
+  }
+  .fa-brands {
+    width: 34px;
+    height: 34px;
+    font-size: 18px;
+  }
+}
+
+/* ---- Responsive breakpoint: hamburger takes over ---- */
+@media (max-width: 1024px) {
+  #nav-bar .menu-toggle {
+    display: flex;
+  }
+
+  #nav-bar .said {
+    display: none;
+    flex-direction: column;
+    align-items: stretch;
+    column-gap: 0;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #000;
+    z-index: 20;
+  }
+
+  #nav-bar .said.open {
+    display: flex !important;
+  }
+
+  #nav-bar .text ul {
+    flex-direction: column;
+    column-gap: 0;
+    width: 100%;
+  }
+
+  #nav-bar .text li {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+    width: 100%;
+  }
+
+  #nav-bar .text li a {
+    display: block;
+    color: #fff;
+    padding: 18px 24px;
+  }
+
+  #nav-bar .text li a:hover {
+    color: #ff4d4d;
+  }
+
+  #nav-bar .icon {
+    justify-content: flex-start;
+    padding: 18px 24px 24px;
+  }
+
+  .fa-brands {
+    width: 40px;
+    height: 40px;
+    font-size: 24px;
+  }
+}
+
 /* democracy */
 @media (max-width: 1024px) {
   .btn a {
@@ -146,7 +217,7 @@
   }
 
     #about {
-      padding-top: 150px;
+      padding-top: 200px;
       padding-bottom: 60px;
 
     }
@@ -159,13 +230,13 @@
   #about .image {
     min-height: 500px;
   }
-  #about {
-      padding-top: 60px;
-      padding-bottom: 60px;
-
-    } 
     #about h2{
       font-size: 40px;
+    }
+    #about {
+      padding-top: 200px;
+      padding-bottom: 60px;
+
     }
 }
 
@@ -174,12 +245,16 @@
   #about .image {
     min-height: 450px;
   }
-  #about {
-      padding-top: 60px;
-      padding-bottom: 30px;
-}
 #about h2{
       font-size: 35px;
+    }
+    #about {
+      padding-top: 170px;
+      padding-bottom: 60px;
+
+    }
+    #democracy .images{
+      border: 0px;
     }
 }
 

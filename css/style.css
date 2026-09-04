@@ -6,6 +6,23 @@
   box-sizing: border-box;
   font-family: "Inter Tight", sans-serif;
 }
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
 
 html,
 body {
@@ -66,13 +83,19 @@ p {
   width: 100%;
   padding: 10px 15px;
   background-color: #fff;
-  /* position: fixed;
-    z-index: 3; */
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 
 #nav-bar .container {
+  width: 100%;
+  max-width: 1280px;
+  display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: center;
+  position: relative;
 }
 
 #nav-bar .content {
@@ -86,6 +109,10 @@ p {
   justify-content: space-between;
   align-items: center;
   column-gap: 25px;
+  flex-shrink: 0;
+}
+#nav-bar .said.open{
+  margin-top: 10px;
 }
 
 #nav-bar .icon {
@@ -101,17 +128,20 @@ p {
 #nav-bar ul {
   display: flex;
   column-gap: 35px;
+  flex-wrap: nowrap;
+  margin: 0;
+  padding: 0;
 }
 
 #nav-bar .text li {
   list-style: none;
-
 }
 
 #nav-bar li a {
   color: #000;
   font-weight: 500;
   text-decoration: none;
+  white-space: nowrap;
 }
 
 #nav-bar .icon-1 {
@@ -140,6 +170,53 @@ p {
 .fa-brands:hover {
   color: white;
   background-color: #f00000;
+}
+
+/* ---- Hamburger button ---- */
+#nav-bar .menu-toggle {
+  display: none;
+  width: 48px;
+  height: 48px;
+  background-color: #f00000;
+  border: none;
+  border-radius: 0;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+#nav-bar .icon-bars {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 22px;
+  pointer-events: none;
+}
+
+#nav-bar .icon-bars span {
+  display: block;
+  height: 3px;
+  width: 100%;
+  background: #fff;
+}
+
+#nav-bar .icon-close {
+  display: none;
+  color: #fff;
+  font-size: 1.8rem;
+  font-weight: 700;
+  line-height: 1;
+  pointer-events: none;
+}
+
+#nav-bar .menu-toggle.open .icon-bars {
+  display: none;
+}
+
+#nav-bar .menu-toggle.open .icon-close {
+  display: block;
 }
 
 /* Nav-Bar */

@@ -1,3 +1,21 @@
+document.addEventListener('click', function (e) {
+    const btn = e.target.closest('#menuToggle');
+    if (!btn) return;
+
+    const said = document.getElementById('navSaid');
+    if (!said) {
+        console.error('menuToggle was clicked, but #navSaid was not found in the page.');
+        return;
+    }
+
+    const isOpen = said.classList.toggle('open');
+    btn.classList.toggle('open', isOpen);
+    btn.setAttribute('aria-expanded', isOpen);
+    document.body.style.overflow = isOpen ? 'hidden' : '';
+});
+
+console.log('nav.js loaded'); // you should see this in console on page load//
+
 (function () {
     const wrapper = document.getElementById('sliderWrapper');
     const track = document.getElementById('sliderTrack');
@@ -25,7 +43,7 @@
     let prevTranslate = 0;
     let autoplayTimer = null;
 
-    const AUTOPLAY_DELAY = 4000;   // time between auto slides
+    const AUTOPLAY_DELAY = 3500;   // time between auto slides
     const DRAG_THRESHOLD = 0.15;   // fraction of width needed to trigger a slide change
 
     function updateDots() {
