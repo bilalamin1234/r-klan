@@ -87,33 +87,33 @@
   #democracy .images {
     height: 500px;
   }
-  #democracy .contents{
+  #democracy .contents {
     max-width: 650px;
   }
-  #democracy .contents h1{
+  #democracy .contents h1 {
     font-size: 40px;
   }
-  #democracy .contents p{
+  #democracy .contents p {
     font-size: 20px;
   }
 }
-@media (max-width:991px) {
-   #democracy .images {
+@media (max-width: 991px) {
+  #democracy .images {
     height: 460px;
   }
 }
-@media (max-width:768px) {
+@media (max-width: 768px) {
   #democracy .images {
     height: 400px;
   }
 }
 
 @media (max-width: 700px) {
-  #democracy h1 {
+  #democracy .contents h1 {
     font-size: 40px;
   }
 
-  #democracy p {
+  #democracy .contents p {
     font-size: 20px;
   }
 
@@ -121,18 +121,18 @@
     margin-bottom: -100px;
   }
 }
-@media (max-width:640px) {
+@media (max-width: 640px) {
   #democracy .images {
     height: 300px;
   }
 }
 
 @media (max-width: 500px) {
-  #democracy h1 {
+  #democracy .contents h1 {
     font-size: 30px;
   }
 
-  #democracy p {
+  #democracy .contents p {
     font-size: 15px;
   }
 
@@ -148,15 +148,14 @@
   #democracy .img {
     border-radius: 5px;
   }
-  @media (max-width:480px) {
-  #democracy .images {
-    height: 250px;
-  }
 }
-}
-@media (max-width:480px) {
+
+@media (max-width: 480px) {
   #democracy .images {
     height: 200px;
+  }
+  #democracy .contents h1 {
+    font-size: 20px;
   }
 }
 
@@ -216,61 +215,54 @@
     flex-direction: column;
   }
 
-    #about {
-      padding-top: 200px;
-      padding-bottom: 60px;
-
-    }
-    #about h2{
-      font-size: 45px;
-    }
+  #about {
+    padding-top: 200px;
+    padding-bottom: 60px;
+  }
+  #about h2 {
+    font-size: 45px;
+  }
 }
 
 @media (max-width: 680px) {
   #about .image {
     min-height: 500px;
   }
-    #about h2{
-      font-size: 40px;
-    }
-    #about {
-      padding-top: 200px;
-      padding-bottom: 60px;
-
-    }
+  #about h2 {
+    font-size: 40px;
+  }
+  #about {
+    padding-top: 200px;
+    padding-bottom: 60px;
+  }
 }
 
-
-@media (max-width: 480px) {
+@media (max-width: 500px) {
   #about .image {
     min-height: 450px;
   }
-#about h2{
-      font-size: 35px;
-    }
-    #about {
-      padding-top: 170px;
-      padding-bottom: 60px;
-
-    }
-    #democracy .images{
-      border: 0px;
-    }
+  #about h2 {
+    font-size: 35px;
+  }
+  #about {
+    padding-top: 170px;
+    padding-bottom: 60px;
+  }
+  #democracy .images {
+    border: 0px;
+  }
 }
-
-
 
 /* about */
 
 /* book */
-@media(max-width:1280px) {
+@media (max-width: 1280px) {
   #book::before {
     left: -600px;
   }
 }
 
-
-@media(max-width:1199px) {
+@media (max-width: 1199px) {
   #book::before {
     left: -550px;
   }
@@ -324,7 +316,6 @@
     left: -200px;
     top: -270px;
   }
-
 }
 
 @media (max-width: 480px) {
@@ -379,7 +370,6 @@
 }
 
 @media (max-width: 480px) {
-
   #shop {
     padding: 60px 15px;
   }
@@ -410,87 +400,68 @@
 
 /* tshirt */
 
-/* reviews */
-
+/* ---- Responsive: cards per view ---- */
 @media (max-width: 1024px) {
-  #review .image img {
-    height: 100px;
-    margin-top: -50px;
-  }
-
-  #review .contents {
-     flex-wrap: wrap; 
-    column-gap: 15px;
-    row-gap: 25px;
-  }
-
-  #review .contents .box {
-    flex: 0 0 calc(50% - 7.5px);
-  }
-
-  #review .contents .box {
-    margin-top: 50px;
-  }
-
-  #review .container {
-    row-gap: 50px;
+  #review .box {
+    width: calc((100% - 20px) / 2); /* 2 per view, 1 gap of 20px */
   }
 }
 
 @media (max-width: 768px) {
-  #review {
-    padding: 60px 20px;
+  #review .box {
+    width: 100%; /* 1 per view */
   }
 
-  #review .position img {
-    height: 35px;
-  }
-  #review .contents {
-     flex-wrap: nowrap; 
-    column-gap: 15px;
-    row-gap: 25px;
-  }
-  #review .contents .box {
-    flex: 0 calc(50% - 7.5px);
+  #review .review-arrow {
+    width: 40px;
+    height: 40px;
+    font-size: 16px;
   }
 }
-
 @media (max-width: 640px) {
-  .contents {
-    flex-direction: column;
-    row-gap: 40px;
-  }
-  #review .contents .box {
-    flex: 0 calc(50% - 7.5px);
-  }
-
-  #review .contents {
-    row-gap: 30px;
-  }
-
   #review h2 {
     font-size: 40px;
   }
 }
-
-@media (max-width:480px) {
+@media (max-width: 480px) {
   #review h2 {
-    font-size: 30px;
+    font-size: 25px;
   }
-  
+  #review .review-slider {
+    column-gap: 0px;
+  }
+  #review .review-arrow {
+    width: 30px;
+    height: 30px;
+    font-size: 15px;
+  }
+  #review .box .image img {
+    margin-top: -45px;
+    height: 90px;
+  }
+  #review .text h3 {
+   font-size: 19px;
+  }
+  #review .text .icon p{
+        font-size: 18px;
+  }
+  #review .text p {
+    font-size: 15px;
 }
-
-/* reviews */
+#review .position img{
+  height: 25px;
+}
+}
 
 /* note */
 
-@media (max-width:1024px) {
+@media (max-width: 1024px) {
   #note {
     padding: 60px 30px 60px 30px;
   }
 }
 
-@media (max-width:640px) {
+@media (max-width: 640px) {
   #note {
     padding: 50px 15px 50px 15px;
   }
@@ -500,7 +471,7 @@
 
 /* donation */
 
-@media (max-width:1024px) {
+@media (max-width: 1024px) {
   #donate .container {
     flex-direction: column;
     align-items: flex-start;
@@ -517,7 +488,7 @@
   }
 }
 
-@media (max-width:768px) {
+@media (max-width: 768px) {
   #donate {
     padding: 60px 20px;
   }
@@ -537,7 +508,7 @@
   }
 }
 
-@media (max-width:640px) {
+@media (max-width: 640px) {
   #donate .text h2 {
     font-size: 25px;
     font-weight: 500;
@@ -548,7 +519,7 @@
   }
 }
 
-@media (max-width:480px) {
+@media (max-width: 480px) {
   #donate .image {
     display: flex;
     align-items: center;
@@ -559,13 +530,13 @@
 
 /* footer */
 
-@media(max-width:1199px) {
+@media (max-width: 1199px) {
   footer .contents {
     column-gap: 110px;
   }
 }
 
-@media(max-width:1024px) {
+@media (max-width: 1024px) {
   footer .contents {
     column-gap: 80px;
   }
@@ -575,7 +546,7 @@
   }
 }
 
-@media(max-width:991px) {
+@media (max-width: 991px) {
   footer .contents {
     column-gap: 60px;
   }
@@ -585,7 +556,7 @@
   }
 }
 
-@media(max-width:768px) {
+@media (max-width: 768px) {
   footer .contents {
     flex-direction: column;
     row-gap: 50px;
@@ -594,7 +565,6 @@
   footer .contents .content1 {
     width: 100%;
     display: flex;
-
   }
 
   footer .contents .content2 {
@@ -608,19 +578,17 @@
   }
 }
 
-
 /* footer */
 
 /* about */
-@media (max-width:1440px) {
+@media (max-width: 1440px) {
   #about .flight {
     height: auto;
     min-height: 500px;
   }
-
 }
 
-@media (max-width:1024px) {
+@media (max-width: 1024px) {
   .text2 p {
     font-size: 18px;
   }
@@ -632,35 +600,32 @@
   #about .container {
     padding: 0px;
   }
-
 }
 
-@media (max-width:768px) {
+@media (max-width: 768px) {
   #about .container {
     flex-direction: column;
   }
 }
 
-@media (max-width:640px) {
+@media (max-width: 640px) {
   #about .flight {
     height: auto;
     min-height: 400px;
   }
-
 }
 
-@media (max-width:480px) {
+@media (max-width: 480px) {
   #about .flight {
     height: auto;
     min-height: 450px;
   }
-
 }
 
 /* about */
 /* choose */
 
-@media (max-width:1024px) {
+@media (max-width: 1024px) {
   #choose p {
     font-size: 18px;
   }
@@ -670,7 +635,7 @@
   }
 }
 
-@media (max-width:991px) {
+@media (max-width: 991px) {
   #choose p {
     font-size: 15px;
   }
@@ -684,7 +649,7 @@
   }
 }
 
-@media (max-width:768px) {
+@media (max-width: 768px) {
   .contents {
     flex-direction: column;
   }
@@ -698,10 +663,9 @@
 
 /* testimonials */
 
-@media (max-width:1200px) {
+@media (max-width: 1200px) {
   #reviews .common {
     padding-right: 230px;
-
   }
 }
 
@@ -721,40 +685,40 @@
 
 /* contact */
 
-@media (max-width:991px) {
-  #contact .text h2{
-  font-size: 30px;
-}
-#contact .container {
+@media (max-width: 991px) {
+  #contact .text h2 {
+    font-size: 30px;
+  }
+  #contact .container {
     column-gap: 20px;
+  }
 }
-}
-@media (max-width:768px) {
+@media (max-width: 768px) {
   #contact .container {
     flex-direction: column;
     row-gap: 30px;
+  }
+  #contact {
+    padding: 100px 15px 60px;
+  }
+  #contact .flight {
+    min-height: 500px;
+  }
 }
-#contact{
-  padding: 100px 15px 60px;
+@media (max-width: 640px) {
+  #contact {
+    padding: 100px 15px 30px;
+  }
+  #contact .flight {
+    min-height: 450px;
+  }
 }
-#contact .flight{
-  min-height: 500px;
-}
-}
-@media (max-width:640px) {
-#contact{
-  padding: 100px 15px 30px;
-}
-#contact .flight{
-  min-height: 450px;
-}
-}
-@media (max-width:480px) {
-#contact{
-  padding: 60px 15px 30px;
-}
-#contact .flight{
-  min-height: 400px;
-}
+@media (max-width: 480px) {
+  #contact {
+    padding: 60px 15px 30px;
+  }
+  #contact .flight {
+    min-height: 400px;
+  }
 }
 /* contact */

@@ -188,3 +188,142 @@ console.log('nav.js loaded'); // you should see this in console on page load//
     setPosition(false);
     startAutoplay();
 })();
+
+
+document.addEventListener('DOMContentLoaded', function () {
+    const viewport = document.getElementById('reviewViewport');
+    const track = document.getElementById('reviewTrack');
+    const prevBtn = document.getElementById('reviewPrev');
+    const nextBtn = document.getElementById('reviewNext');
+
+    if (!track || !viewport || !prevBtn || !nextBtn) return;
+
+    // Keep a permanent copy of the real boxes (never mutated)
+    const originalBoxes = Array.from(track.children);
+    const total = originalBoxes.length;
+
+    let perView = getPerView();
+    let position = 0;      // index within the extended (cloned) track
+    let isAnimating = false;
+    let isHovering = false;
+    let autoplayTimer = null;
+
+    const AUTOPLAY_DELAY = 4000;
+    const STEP = 1; // always move one box per slide, regardless of perView
+
+    function getPerView() {
+        const w = window.innerWidth;
+        if (w <= 640) return 1;
+        if (w <= 1024) return 2;
+        return 3;
+    }
+
+    // Rebuild the track with clone padding on both sides, sized to the current perView
+    function buildTrack() {
+        track.innerHTML = '';
+
+        const leadingClones = originalBoxes
+            .slice(total - perView)
+            .map(function (box) { return box.cloneNode(true); });
+
+        const trailingClones = originalBoxes
+            .slice(0, perView)
+            .map(function (box) { return box.cloneNode(true); });
+
+        leadingClones.forEach(function (clone) { track.appendChild(clone); });
+        originalBoxes.forEach(function (box) { track.appendChild(box); });
+        trailingClones.forEach(function (clone) { track.appendChild(clone); });
+
+        position = perView; // start on the real first box
+        setTransform(false);
+    }
+
+    function setTransform(animate) {
+        const children = track.children;
+        const boxWidth = children[0].getBoundingClientRect().width;
+        const gap = parseFloat(getComputedStyle(track).columnGap) || 0;
+        const offset = position * (boxWidth + gap);
+
+        track.classList.toggle('no-transition', !animate);
+        track.style.transform = 'translateX(' + (-offset) + 'px)';
+    }
+
+    function goToPosition(newPosition) {
+        if (isAnimating) return;
+        isAnimating = true;
+        position = newPosition;
+        setTransform(true);
+    }
+
+    function nextSlide() {
+        goToPosition(position + STEP);
+    }
+
+    function prevSlide() {
+        goToPosition(position - STEP);
+    }
+
+    track.addEventListener('transitionend', function () {
+        // Real, non-clone range is [perView, perView + total - 1].
+        // If we've drifted into clone territory, silently snap back
+        // to the equivalent real position, one "total" away.
+        if (position >= perView + total) {
+            position -= total;
+            setTransform(false);
+        } else if (position < perView) {
+            position += total;
+            setTransform(false);
+        }
+        isAnimating = false;
+    });
+
+    nextBtn.addEventListener('click', function () {
+        nextSlide();
+        restartAutoplay();
+    });
+
+    prevBtn.addEventListener('click', function () {
+        prevSlide();
+        restartAutoplay();
+    });
+
+    function startAutoplay() {
+        stopAutoplay();
+        autoplayTimer = setInterval(nextSlide, AUTOPLAY_DELAY);
+    }
+
+    function stopAutoplay() {
+        if (autoplayTimer) clearInterval(autoplayTimer);
+    }
+
+    function restartAutoplay() {
+        if (!isHovering) startAutoplay();
+    }
+
+    viewport.addEventListener('mouseenter', function () {
+        isHovering = true;
+        stopAutoplay();
+    });
+
+    viewport.addEventListener('mouseleave', function () {
+        isHovering = false;
+        startAutoplay();
+    });
+
+    let resizeTimer;
+    window.addEventListener('resize', function () {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(function () {
+            const newPerView = getPerView();
+            if (newPerView !== perView) {
+                perView = newPerView;
+                buildTrack(); // rebuild clone padding for the new per-view count
+            } else {
+                setTransform(false); // just reposition for the new box width
+            }
+        }, 150);
+    });
+
+    buildTrack();
+    startAutoplay();
+});

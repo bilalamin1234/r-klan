@@ -81,7 +81,7 @@ p {
   display: flex;
   justify-content: center;
   width: 100%;
-  padding: 10px 15px;
+  padding: 10px 0px;
   background-color: #fff;
   position: sticky;
   top: 0;
@@ -96,6 +96,12 @@ p {
   justify-content: space-between;
   align-items: center;
   position: relative;
+}
+#nav-bar .logo{
+  margin-left: 15px;
+}
+#nav-bar button{
+  margin-right: 15px;
 }
 
 #nav-bar .content {
@@ -175,8 +181,8 @@ p {
 /* ---- Hamburger button ---- */
 #nav-bar .menu-toggle {
   display: none;
-  width: 48px;
-  height: 48px;
+  width: 45px;
+  height: 45px;
   background-color: #f00000;
   border: none;
   border-radius: 0;
@@ -185,7 +191,9 @@ p {
   justify-content: center;
   flex-shrink: 0;
 }
-
+#nav-bar .menu-toggle:hover{
+  border: 2px solid black;
+}
 #nav-bar .icon-bars {
   display: flex;
   flex-direction: column;
@@ -359,7 +367,7 @@ p {
   width: 100%;
   display: flex;
   justify-content: center;
-  padding-top: 150px;
+  padding-top: 200px;
   padding-bottom: 100px;
   background-image: url("../image/home/BG-OP.jpg");
   background-size: cover;
@@ -549,8 +557,6 @@ p {
 
 /* shop */
 
-/* review */
-
 #review {
   width: 100%;
   display: flex;
@@ -561,15 +567,13 @@ p {
 }
 
 #review .container {
-  row-gap: 100px;
+  row-gap: 40px;
+  width: 100%;
+  max-width: 1280px;
 }
 
- #review .contents {
-  display: flex;
-  column-gap: 20px;
-} 
-
-#review .contents .image {
+#review .contents .image,
+#review .box .image {
   display: flex;
   justify-content: center;
 }
@@ -591,15 +595,17 @@ p {
   font-size: 22px;
 }
 
- .contents .box {
+.box {
   background-color: white;
   position: relative;
   display: flex;
   flex-direction: column;
-  box-shadow: 0px 3px 20px 5px rgba(94, 94, 94, 0.5);
-} 
+  box-shadow: 0px 15px 10px 2px rgba(94, 94, 94, 0.5);
+  flex: 0 0 auto;
+  min-width: 0;
+}
 
-#review .contents .image img {
+.box .image img {
   margin-top: -60px;
   height: 120px;
   filter: drop-shadow(0px 15px 15px #6e6363);
@@ -620,12 +626,73 @@ p {
   font-size: 20px;
 }
 
-.contents .responsive {
+/* ---- Slider wrapper ---- */
+#review .review-slider {
+  width: 100%;
   display: flex;
-  column-gap: 20px;
+  align-items: center;
+  column-gap: 15px;
 }
 
-/* review */
+#review .review-viewport {
+  flex: 1;
+  overflow: hidden;
+  min-width: 0;
+  padding-top: 60px; /* room for the avatar images that overflow above each box */
+}
+
+#review .review-track {
+  display: flex;
+  column-gap: 20px;
+  transition: transform 0.5s cubic-bezier(.4,0,.2,1);
+  will-change: transform;
+}
+
+#review .review-track.no-transition {
+  transition: none;
+}
+
+/* Box width per breakpoint — JS reads --per-view to calculate the slide amount,
+   this just needs to visually match it */
+#review .box {
+  width: calc((100% - 40px) / 3); /* 3 per view, 2 gaps of 20px */
+}
+
+/* ---- Arrows ---- */
+#review .review-arrow {
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 2px solid #e0e0e0;
+  background: #fff;
+  color: #000;
+  background-color: #e0e0e0;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+#review .review-arrow:hover {
+  background: #a70000;
+  color: #fff;
+}
+
+#review .review-arrow:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+#review .review-arrow:disabled:hover {
+      background: #fff;
+    color: black;
+    background-color: #e0e0e0;
+    border: 1px solid #e0e0e0;
+}
+
 
 /* note */
 
